@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forum — Steady Focus Tutoring</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" stroke="#223662" stroke-width="5" fill="none"/><circle cx="20" cy="20" r="16" stroke="#f2a93b" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="35" transform="rotate(-90 20 20)"/></svg>
+      <span class="brand-name">Steady Focus<span>Tutoring</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="forum.html" class="active">Forum</a>
+      <a href="chatbot.html">Tutor Bot</a>
+      <a href="portal.html">Course Portal</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:20px;">
+  <div class="container">
+    <div class="eyebrow">Community</div>
+    <h1>A place to compare notes between sessions.</h1>
+    <p class="lede">Students and parents share strategies, ask questions, and celebrate wins. Pick a category to browse, or start a new thread.</p>
+  </div>
+</section>
+
+<section style="padding-top:10px;">
+  <div class="container">
+    <div class="pill-row" id="category-pills"></div>
+
+    <div class="grid-2" style="grid-template-columns: 2fr 1fr; align-items:start;">
+      <div>
+        <div id="thread-list"></div>
+      </div>
+
+      <div class="card">
+        <h3>Start a new thread</h3>
+        <form id="new-thread-form">
+          <label for="t-name">Your name</label>
+          <input type="text" id="t-name" placeholder="e.g. Jordan's mom" required>
+          <label for="t-cat">Category</label>
+          <select id="t-cat"></select>
+          <label for="t-title">Title</label>
+          <input type="text" id="t-title" required>
+          <label for="t-body">Post</label>
+          <textarea id="t-body" placeholder="What's on your mind?" required></textarea>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Post thread</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="container badge-note">
+    <strong>Setup note (remove before publishing):</strong> this forum is a front-end demo — new threads live in the browser's memory only and disappear on refresh, since there's no shared database behind it yet. For a real, moderated community you have two solid paths: (1) fastest — embed a hosted forum like <strong>Discourse</strong>, <strong>Flarum</strong>, or a Circle/Mighty Networks community and link to it from here; (2) custom — have a developer add a small backend (e.g. Supabase or Firebase) so posts persist and users can sign in. Either way, plan for basic moderation tools before opening it to real users.
+  </div>
+</section>
+
+<footer class="site">
+  <div class="container foot-grid">
+    <div class="brand-name">Steady Focus Tutoring</div>
+    <div class="foot-links">
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="forum.html">Forum</a>
+      <a href="chatbot.html">Tutor Bot</a>
+      <a href="portal.html">Course Portal</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/forum.js"></script>
+</body>
+</html>

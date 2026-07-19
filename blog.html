@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Steady Focus Tutoring</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" stroke="#223662" stroke-width="5" fill="none"/><circle cx="20" cy="20" r="16" stroke="#f2a93b" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="35" transform="rotate(-90 20 20)"/></svg>
+      <span class="brand-name">Steady Focus<span>Tutoring</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="forum.html">Forum</a>
+      <a href="chatbot.html">Tutor Bot</a>
+      <a href="portal.html">Course Portal</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:20px;">
+  <div class="container">
+    <div class="eyebrow">From the blog</div>
+    <h1>Notes on ADHD, learning, and getting things done anyway.</h1>
+    <p class="lede">Posts are written on Substack and pulled in here automatically, so you only ever have to write them in one place.</p>
+    <a href="https://YOURNAME.substack.com/subscribe" target="_blank" rel="noopener" class="btn btn-mint" id="subscribe-link">Subscribe on Substack</a>
+  </div>
+</section>
+
+<section style="padding-top:10px;">
+  <div class="container">
+    <div id="blog-status" class="badge-note" style="margin-bottom:24px;">Loading latest posts…</div>
+    <div class="grid-3" id="blog-grid"></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="container badge-note">
+    <strong>Setup note (remove before publishing):</strong> open <code>js/blog.js</code> and set <code>SUBSTACK_URL</code> to your real Substack address (e.g. <code>https://yourname.substack.com</code>). This page fetches your public RSS feed through the free <a href="https://rss2json.com" target="_blank" rel="noopener" style="color:var(--mint);">rss2json.com</a> proxy (needed because browsers can't read another site's RSS directly) and renders your latest posts automatically — no copy-pasting required. If you'd rather not depend on a third-party proxy, Substack also supports embedding your feed via an iframe, or you can run a tiny server-side fetch instead; ask your developer for either option.
+  </div>
+</section>
+
+<footer class="site">
+  <div class="container foot-grid">
+    <div class="brand-name">Steady Focus Tutoring</div>
+    <div class="foot-links">
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="forum.html">Forum</a>
+      <a href="chatbot.html">Tutor Bot</a>
+      <a href="portal.html">Course Portal</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/blog.js"></script>
+</body>
+</html>
