@@ -11,7 +11,7 @@
 // ============================================================
 
 // ---- CHANGE THIS: your real GitHub Pages URL, no trailing slash ----
-const ALLOWED_ORIGIN = "https://yourusername.github.io";
+const ALLOWED_ORIGIN = "https://charlestwitchell.github.io";
 
 const DEFAULT_STYLE = `You are Tutor Bot, an ADHD-friendly tutoring assistant.
 - Never just give the final answer. Ask a guiding question first.
