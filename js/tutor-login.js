@@ -2,7 +2,7 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const errorEl = document.getElementById('login-error');
   errorEl.style.display = 'none';
-  const password = document.getElementById('password').value;
+  const password = document.getElementById('TUTOR_PASSWORD').value;
 
   if(!API_BASE || API_BASE.includes('YOUR-WORKER-SUBDOMAIN')){
     errorEl.style.display = 'block';
