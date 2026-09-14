@@ -4,15 +4,19 @@ A 7-page starter site for an ADHD tutoring business: Home, About, Contact, Blog 
 
 ## Files
 ```
-index.html      Home
-about.html      About you
-contact.html    Contact form
-blog.html       Blog synced from Substack
-forum.html      Community forum (demo)
-chatbot.html    Tutor Bot (demo)
-portal.html     Course portal (demo)
-css/style.css   Shared design system
-js/*.js         Page logic (nav, contact form, blog sync, forum, chatbot, portal)
+index.html          Home
+about.html          About you
+contact.html        Contact form
+blog.html           Blog synced from Substack
+forum.html          Community forum (demo)
+chatbot.html        Tutor Bot (demo)
+portal.html         Course portal — class catalog
+class.html          Course portal — single class / video player
+account.html        Course portal — student signup, login, billing
+portal-admin.html   Course portal — admin: create/edit classes
+css/style.css       Shared design system
+js/*.js             Page logic
+backend/            Cloudflare Worker backends (see SETUP-*.md files)
 ```
 
 ## First things to customize
@@ -22,7 +26,7 @@ js/*.js         Page logic (nav, contact form, blog sync, forum, chatbot, portal
 4. **Colors/fonts** — all defined at the top of `css/style.css` under `:root` if you want to adjust the palette.
 
 ## What works out of the box
-- All 7 pages, navigation, and responsive layout.
+- All pages, navigation, and responsive layout.
 - The blog page will show real Substack posts as soon as you set your feed URL (see below) — no manual copy-pasting needed after that.
 
 ## What's a working demo and needs one more step for production
@@ -46,11 +50,8 @@ A scripted demo so you can see the interaction, not a live AI model. To make it 
 3. Point the front-end fetch call at that endpoint.
 **Important:** never put your Anthropic API key directly in front-end code like these HTML/JS files — anyone viewing the page source could read it. It has to live on a server you control. See docs.claude.com for the exact request format.
 
-**Course portal** (`portal.html` / `js/portal.js`)
-A working catalog demo — added courses show up live but aren't saved, and the file picker doesn't actually upload video. Two realistic paths:
-- **Fastest:** host videos on Vimeo (with domain-restricted privacy) or YouTube (unlisted), and use this page as a catalog that embeds each player.
-- **Full control:** use a course platform (Teachable, Thinkific, Kajabi) for hosting, drip content, and student logins, and link to it from here.
-If you want logins and progress-tracking on your own site specifically, that needs real user accounts — a developer can add this with Supabase/Firebase Auth.
+**Course portal** (`portal.html`, `class.html`, `account.html`, `portal-admin.html`)
+A real, working portal: students create accounts, subscribe via Stripe, and unlock Vimeo-hosted classes; you manage classes from `portal-admin.html`. It needs one-time setup — see `backend/SETUP-COURSE-PORTAL.md`.
 
 ## Hosting
 This is a static site — any of these work well and have free tiers: Netlify, Vercel, GitHub Pages, Cloudflare Pages. Upload the whole folder (keeping the `css/` and `js/` subfolders) and point your domain at it.

@@ -3,16 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Course Portal — Steady Focus Tutoring</title>
+<title>Class — Steady Focus Tutoring</title>
 <link rel="stylesheet" href="css/style.css">
 <style>
-  .class-card{display:flex; flex-direction:column; height:100%;}
-  .class-card .spacer{flex:1;}
-  .lock-badge{
-    display:inline-flex; align-items:center; gap:6px; font-size:.72rem; font-weight:600;
-    letter-spacing:.06em; text-transform:uppercase; color:var(--gold-2);
-    background:rgba(242,169,59,.12); padding:4px 10px; border-radius:999px; margin-bottom:10px; margin-left:8px;
-  }
+  .video-wrap{position:relative; width:100%; aspect-ratio:16/9; background:#000; border-radius:var(--radius); overflow:hidden;}
+  .video-wrap iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
 </style>
 </head>
 <body>
@@ -38,39 +33,27 @@
 </header>
 
 <section class="hero" style="padding-bottom:10px;">
-  <div class="container">
-    <div class="eyebrow">Self-paced learning</div>
-    <h1>Online classes.</h1>
-    <p class="lede">Video lessons and mini-courses students can work through between sessions — study skills, executive function, and subject fundamentals. Subscribe once, unlock everything.</p>
+  <div class="container" id="class-header">
+    <div class="badge-note">Loading class…</div>
   </div>
 </section>
 
-<section style="padding-top:10px;">
-  <div class="container">
-    <div class="pill-row" id="course-pills"></div>
-    <div id="course-status" class="badge-note" style="display:none; margin-bottom:24px;"></div>
-    <div class="grid-3" id="course-grid"></div>
-  </div>
+<section style="padding-top:0;">
+  <div class="container" style="max-width:860px;" id="class-body"></div>
 </section>
 
 <footer class="site">
   <div class="container foot-grid">
     <div class="brand-name">Steady Focus Tutoring</div>
     <div class="foot-links">
-      <a href="about.html">About</a>
-      <a href="blog.html">Blog</a>
-      <a href="forum.html">Forum</a>
-      <a href="chatbot.html">Tutor Bot</a>
-      <a href="portal.html">Course Portal</a>
-      <a href="contact.html">Contact</a>
+      <a href="portal.html">Back to Course Portal</a>
       <a href="account.html">My Account</a>
-      <a href="portal-admin.html" style="opacity:.6;">Course admin</a>
     </div>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
 <script src="js/config.js"></script>
-<script src="js/portal.js"></script>
+<script src="js/class.js"></script>
 </body>
 </html>

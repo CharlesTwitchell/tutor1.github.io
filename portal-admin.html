@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Course Admin — Steady Focus Tutoring</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .class-row{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:16px 0; border-bottom:1px solid var(--panel-line);}
+  .class-row:last-child{border-bottom:none;}
+  .class-row .meta{flex:1;}
+  .class-row .actions{display:flex; gap:8px; flex-shrink:0;}
+  .checkbox-row{display:flex; align-items:center; gap:8px; margin-bottom:18px;}
+  .checkbox-row input{width:auto; margin:0;}
+  .checkbox-row label{margin:0;}
+  .unpublished{opacity:.6;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" stroke="#223662" stroke-width="5" fill="none"/><circle cx="20" cy="20" r="16" stroke="#f2a93b" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="35" transform="rotate(-90 20 20)"/></svg>
+      <span class="brand-name">Steady Focus<span>Tutoring</span></span>
+    </a>
+    <nav class="links">
+      <a href="portal.html">Course Portal</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:10px;">
+  <div class="container">
+    <div class="eyebrow">Admin access only</div>
+    <h1>Course admin</h1>
+    <p class="lede">Create and edit the classes students see in the Course Portal.</p>
+  </div>
+</section>
+
+<section id="login-state" style="padding-top:0;">
+  <div class="container" style="max-width:420px;">
+    <div class="card">
+      <form id="login-form">
+        <label for="admin-password">Password</label>
+        <input type="password" id="admin-password" required autocomplete="current-password">
+        <button type="submit" class="btn btn-primary" style="width:100%;">Log in</button>
+      </form>
+      <p id="login-error" class="field-note" style="display:none; color:var(--danger); margin-top:12px;"></p>
+    </div>
+  </div>
+</section>
+
+<section id="admin-state" style="padding-top:0; display:none;">
+  <div class="container">
+    <div class="grid-2" style="align-items:start;">
+
+      <div class="card">
+        <h3 id="form-title">Add a new class</h3>
+        <form id="class-form">
+          <input type="hidden" id="class-id">
+          <label for="c-title">Title</label>
+          <input type="text" id="c-title" required maxlength="200">
+
+          <label for="c-cat">Category</label>
+          <input type="text" id="c-cat" placeholder="e.g. Study skills" required>
+
+          <label for="c-desc">Description</label>
+          <textarea id="c-desc" maxlength="4000" required></textarea>
+
+          <label for="c-vimeo">Vimeo video ID</label>
+          <input type="text" id="c-vimeo" placeholder="e.g. 123456789">
+          <p class="field-note">The numeric ID from the Vimeo video URL, e.g. vimeo.com/<strong>123456789</strong>.</p>
+
+          <label for="c-minutes">Length (minutes)</label>
+          <input type="number" id="c-minutes" min="0" value="0">
+
+          <label for="c-sort">Sort order</label>
+          <input type="number" id="c-sort" value="0">
+          <p class="field-note">Lower numbers show first in the catalog.</p>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="c-published">
+            <label for="c-published">Published (visible to students)</label>
+          </div>
+
+          <div style="display:flex; gap:12px;">
+            <button type="submit" class="btn btn-primary" style="flex:1;" id="save-btn">Add class</button>
+            <button type="button" class="btn btn-ghost" id="cancel-edit-btn" style="display:none;">Cancel edit</button>
+          </div>
+        </form>
+        <p id="form-error" class="field-note" style="display:none; color:var(--danger); margin-top:12px;"></p>
+        <p id="form-status" class="field-note" style="display:none; margin-top:12px;"></p>
+      </div>
+
+      <div class="card">
+        <h3>All classes</h3>
+        <div id="class-list"><p class="field-note">Loading…</p></div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:24px; display:flex; gap:12px; align-items:center;">
+      <button id="logout-btn" class="btn btn-ghost">Log out</button>
+      <a href="portal.html" class="btn btn-ghost">See student view</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="container foot-grid">
+    <div class="brand-name">Steady Focus Tutoring</div>
+    <div class="foot-links">
+      <a href="index.html">Back to site</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/config.js"></script>
+<script src="js/portal-admin.js"></script>
+</body>
+</html>
